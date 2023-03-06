@@ -1,0 +1,10 @@
+Array:
+	pop() : xóa phần tử cuối cùng của mảng
+	push(): thêm một phần tử vào mảng
+	splice(): xóa giá trị trong mảng theo vị trí của giá trị đó
+	sort() : sắp xếp lại mảng theo bảng chữ cái
+
+
+Date:
+	new Date() : gán cho biến bằng giá trị ngày giờ hiện tại
+	getFullYear(): chuyển đổi ngày tháng thành năm chính xác (4 chữ số)

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum array</title>
+</head>
+<body>
+    <input type="number" name="num" id="input_n" placeholder="Nhap N">
+    <h1>Sum from 1 to N: <h2 class="result"></h2> </h1>
+    <h1>Solution</h1>
+    <input type="number" name="num_1" class="number_1" placeholder="Nhap A">
+    <input type="number" name="num_2" class="number_2" placeholder="Nhap B">
+    <input type="number" name="num_3" class="number_3" placeholder="Nhap C">
+    <h1 id="phuongtrinh"></h1>
+    <h1>x1 = <h2 class="x1"></h2> </h1>
+    <h1>x2 = <h2 class="x2"></h2> </h1>
+
+
+    <script>
+        var N;
+        let result = 0;
+        var inputN = document.getElementById('input_n');
+            inputN.oninput = function (e) {
+                N = e.target.value;
+                while(N<0 || N>2000000) {
+                    alert("Nhap lai:");
+                    return N;
+                }
+                var output = document.querySelector('.result');
+                for (let i = 1; i <= N; i++) {
+                    result += i;
+                }
+                output.innerHTML = result;
+                return result = 0;
+            }
+        
+        let A,B,C;
+        let result_1 = 0;
+        var inputA = document.querySelector('.number_1');
+        var inputB = document.querySelector('.number_2');
+        var inputC = document.querySelector('.number_3');
+            inputA.oninput = function(e) {
+                A = e.target.value;
+                inputB.oninput = function(e) {
+                    B = e.target.value;
+                    inputC.oninput = function(e) {
+                        C = e.target.value;
+                        let delta = B*B - 4*A*C;
+                        // console.log(delta);
+                        var phuongtrinh = document.getElementById('phuongtrinh');
+                        var output_x1 = document.querySelector('.x1')
+                        var output_x2 = document.querySelector('.x2')
+                        if (A == 0) {
+                            phuongtrinh.innerHTML = '<h3> PT co 1 nghiem </h3>';
+                            const x = -C/B;
+                            return output_x1.innerHTML = x;
+                        }
+                        if (delta >= 0) {
+                            phuongtrinh.innerHTML = '<h3> PT co 2 nghiem phan biet </h3>';
+                            const x1 = B + Math.sqrt(delta)/(2*A);
+                            const x2 = B - Math.sqrt(delta)/(2*A);
+                            output_x1.innerHTML = x1;
+                            output_x2.innerHTML = x2;
+                        }
+                        else phuongtrinh.innerHTML = '<h3> PT vo nghiem </h3>';
+                    }
+                }
+            }
+            // inputB.oninput = function(e) {
+            //     B = e.target.value;
+            // }
+            // inputC.oninput = function(e) {
+            //     C = e.target.value;
+            // }
+        // let delta = B*B - 4*A*C;
+
+    </script>
+
+</body>
+</html>
